@@ -1,0 +1,12 @@
+body,
+html {
+  direction: rtl;
+  background-image: url("./assets/images/רקע.jpg");
+  background-size: cover;
+  /* התמונה תתפוס את כל הרקע עם שמירה על פרופורציות */
+  background-position: center;
+  /* התמונה תמיד תהיה ממורכזת */
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+}

@@ -1,0 +1,90 @@
+.donations-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* כדי שברגע שאין מקום, הדיבים יעברו לשורה הבאה */
+    gap: 20px;
+    /* רווח בין הדיבים */
+    justify-content: space-between;
+    /* פיזור שווה של הדיבים */
+    margin: 20px;
+    /* רווח מהקצוות */
+}
+
+
+.donation-container h1 {
+    grid-area: h1;
+}
+
+
+.donation-container h2 {
+    grid-area: h2;
+}
+
+
+.money {
+    grid-area: money;
+}
+
+
+.time {
+    grid-area: time;
+}
+
+.letter {
+    grid-area: letter;
+}
+
+
+.heart {
+    grid-area: heart;
+}
+
+
+.donation-container {
+    direction: rtl;
+    display: grid;
+    grid-template-areas: "letter money  dedication heart"
+        "letter time  dedication heart"
+    ;
+    grid-template-columns: 0.3fr 1fr 2fr;
+    gap: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 0.5%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* כל אלמנט בתוך דיב התרומה */
+.donation-container h1,
+.donation-container h2,
+.donation-container p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+.dedication {
+    width: 150px;
+    grid-area: dedication;
+    padding: 20px;
+    /* רווח פנימי סביב הטקסט */
+    border: 2px solid #ced7d3;
+    /* צבע גבול ירוק כהה, מתקשר לטבע וצמיחה */
+    border-radius: 10px;
+    /* פינות מעוגלות */
+    background-color: #99999958;
+    /* צבע רקע ירוק בהיר, מרגיע ומרמז על חיוביות */
+    font-style: italic;
+    /* עיצוב טקסט באיטלקי */
+    text-align: center;
+    /* מיישר את הטקסט למרכז */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* צל להדגשה */
+    max-width: 80%;
+    /* הגבלת רוחב */
+    margin: 20px auto;
+    /* רווח בחלק העליון והתחתון */
+}

@@ -1,0 +1,74 @@
+.chat-container {
+  position: fixed;
+  top: 110px;
+  bottom: 5px;
+  /* שינוי המיקום מ-66% לעשייה מבוססת על החלק התחתון */
+  right: 55%;
+  /* מיקום ימין גמיש */
+  width: 90%;
+  /* אורך רוחב דינמי */
+  max-width: 40%;
+  /* הגבלת רוחב למקסימום */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.message-bubble {
+  opacity: 0;
+  position: relative;
+  margin-bottom: 15px;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.sent {
+  background-color: #25d366;
+  align-self: flex-end;
+  border-radius: 15px 15px 0 15px;
+  text-align: left;
+}
+
+.received {
+  background-color: #f7f7f7;
+  align-self: flex-start;
+  border-radius: 15px 15px 15px 0;
+  text-align: right;
+}
+
+.message-text {
+  font-size: 16px;
+  color: black;
+  padding: 10px;
+  margin: 0;
+}
+
+.message-name {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+  text-align: right;
+  font-weight: bold;
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .chat-container {
+    display: none;
+  }
+}

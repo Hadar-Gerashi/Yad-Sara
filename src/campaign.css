@@ -1,0 +1,81 @@
+.campaign-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 21vh;
+  height: 45vh;
+  padding: 0;
+}
+
+.campaign-progress-bar {
+  width: 80%;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: rgb(30, 93, 187);
+  border-radius: 10px;
+}
+
+.summ {
+  font-size: 2.8rem;
+}
+
+
+.heart2 {
+  width: 25px;
+  /* גודל טיפה יותר גדול */
+  height: 25px;
+  /* גודל טיפה יותר גדול */
+  background-color: red;
+  transform: rotate(45deg);
+  /* position: relative; */
+  margin: 50px auto;
+}
+
+.heart2:before,
+.heart2:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 25px;
+  /* גודל טיפה יותר גדול */
+  height: 25px;
+  /* גודל טיפה יותר גדול */
+  border-radius: 50%;
+  background-color: red;
+}
+
+.heart2:before {
+  z-index: -1;
+  top: -12.5px;
+  /* התאמת העיגול העליון */
+  left: 0;
+}
+
+.heart2:after {
+  z-index: -1;
+  top: 0;
+  left: -12.5px;
+  /* התאמת העיגול השמאלי */
+}
+
+
+@media (max-width: 800px) {
+  .campaign-progress-bar {
+    width: 65%;
+  }
+
+  .summ {
+    font-size: 2.2rem;
+  }
+
+  .campaign-container {
+    height: 40vh;
+  }
+}

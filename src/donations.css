@@ -1,0 +1,37 @@
+.search {
+  width: 80%;
+  margin-right: 10%;
+  height: 5.5vh;
+  z-index: 1;
+  background-color: #f9f9f9;
+  border-radius: 1px;
+  /* אפקט של צל כדי ליצור תחושת עומק */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  /* סיבוב קל או שיפוע להדגשה של האפקט */
+  transform: translateZ(50px);
+  /* "התרוממות" של האלמנט */
+  /* אפשר להוסיף גם אנימציה כך שכשזה יופיע זה ייראה רך יותר */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.scrollable-container {
+  width: 80%;
+  margin-right: 10%;
+  overflow-y: auto;
+  direction: ltr;
+  /* height: calc(40vh - -90px); */
+  /* margin-bottom: 10%; */
+  height: calc(65vh - -90px);
+}
+
+
+
+@media (max-width: 800px) {
+  .search,
+  .scrollable-container {
+    width: 100%;
+    margin: 0;
+  }
+}

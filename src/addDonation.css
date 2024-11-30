@@ -1,0 +1,40 @@
+form {
+    max-width: 400px;
+    /* רוחב מקסימלי לטופס */
+    margin: 0 auto;
+    /* מרכז את הטופס במרכז הדף */
+    padding: 20px;
+    border: 1px solid #f9f9f9;
+    /* מסגרת דקה */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form input,
+form textarea {
+    display: block;
+    /* כל אלמנט יהיה בשורה נפרדת */
+    width: 96%;
+    /* כל שדה יכסה את כל הרוחב של הטופס */
+    margin-bottom: 15px;
+    /* רווח בין השדות */
+    padding: 8px;
+    /* ריפוד פנימי בשדות */
+    font-size: 16px;
+    /* גודל פונט */
+    background-color: rgba(231, 227, 227, 0.884);
+    border: 0.5px solid rgba(0, 0, 0, 0.315);
+    border-radius: 8px;
+}
+
+
+
+/* אפקט hover על כפתור submit */
+form button:hover {
+    background-color: #00000076;
+    /* צבע רקע אחר כשמעבירים את העכבר */
+    transform: scale(1.05);
+    /* שינוי גודל הכפתור קצת */
+}
