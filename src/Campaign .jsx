@@ -46,7 +46,7 @@ export default function Campaign(props) {
       <h2> יעד הקמפיין: {ShekelToDollar(target, props.coin)}</h2>
 
       {/* מספר התורמים */}
-      <p>קיים {props.arr.length == 0 ? 0 : props.arr[props.arr.length - 1].id} תורמים </p>
+      <p>קיים {props.arr.length == 0 ? 0 : props.arr.length } תורמים </p>
 
     </div>
 

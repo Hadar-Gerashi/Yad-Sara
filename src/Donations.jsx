@@ -18,7 +18,6 @@ export default function Donations(props) {
     const [sort, setSort] = React.useState('');
 
 
-
     //משתנה שמשתנה בפונקציה בעמוד זה אבל כשהדף מתרנדם
     //  לא קורה לו כלום והוא נשאר כפי שהיה ללא שינוי או איפוס
     const typeSearch = useRef("name");
@@ -28,17 +27,22 @@ export default function Donations(props) {
     //  מערך עותק סטטי של האנשים שתרמו 
     //כי למיונים אני לא רוצה לשנות את המערך המקורי
     let [copyArr, setCopyArr] = useState([...props.donationsList])
+    
 
 
 
     // פונקציה שמקבלת סוג מיון וממינת עותק של עותק המערך המקורי 
     // לפי הנדרש ולבסוף מעדכנת את עותק המערך המקורי
-    function sortBy(type) {
-        let copy = [...props.donationsList]
+    function sortBy(type,arr) {
+        let copy = [...arr]
 
         switch (type) {
+            case "old": {
+                copy=copy.sort((a, b) => new Date(a.date) - new Date(b.date));
+                break;
+            }
             case "new": {
-                copy.reverse()
+                copy= copy.sort((a, b) => new Date(b.date) - new Date(a.date));
                 break;
             }
 
@@ -61,7 +65,7 @@ export default function Donations(props) {
 
         }
 
-        setCopyArr(copy)
+        setCopyArr([...copy])
     }
 
 
@@ -77,7 +81,7 @@ export default function Donations(props) {
 
         //אם לא בחרת כלום תציג את כל המערך
         if(type==""){
-            arrHelp=[...copy.reverse()]
+            arrHelp=[...copy].reverse()
         }
 
 
@@ -103,7 +107,11 @@ export default function Donations(props) {
             }}
             
         }
+        
+        // let copya=arrHelp
+        // setCopyArr(copya)
         setCopyArr(arrHelp)
+        sortBy(sort,arrHelp);
     }
 
 
@@ -126,7 +134,7 @@ export default function Donations(props) {
                     autoWidth
                     onChange={(e) => {
 
-                        sortBy(e.target.value)
+                        sortBy(e.target.value,copyArr)
                         setSort(e.target.value);
 
 
@@ -178,7 +186,12 @@ export default function Donations(props) {
             <TextField name="searchInput" style={{ width: "200px", height: "10px", marginTop: "-13px" }}
                 id="standard-basic" label="מה אתה מחפש..." variant="standard" onChange={(e) => {
                     let txt = e.target.value
-                    searchBy(typeSearch.current, txt)
+                  
+
+                   searchBy(typeSearch.current, txt)
+                    // sortBy(sort)
+                 
+                 
                     console.log(txt)
                 }} />
 
